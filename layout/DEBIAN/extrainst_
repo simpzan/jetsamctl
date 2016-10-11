@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [[ $1 == upgrade ]]; then
+    /bin/launchctl unload /Library/LaunchDaemons/com.simpzan.jetsamctl.plist
+fi
+
+if [[ $1 == install || $1 == upgrade ]]; then
+    chown 0:0 /Library/LaunchDaemons/com.simpzan.jetsamctl.plist
+    /bin/launchctl load /Library/LaunchDaemons/com.simpzan.jetsamctl.plist
+fi
+
+exit 0
