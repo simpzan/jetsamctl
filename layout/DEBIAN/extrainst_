@@ -6,6 +6,7 @@ fi
 
 if [[ $1 == install || $1 == upgrade ]]; then
     chown 0:0 /Library/LaunchDaemons/com.simpzan.jetsamctl.plist
+    chown 0:0 /usr/bin/jetsamctl
     /bin/launchctl load /Library/LaunchDaemons/com.simpzan.jetsamctl.plist
 fi
 
